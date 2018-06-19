@@ -36,15 +36,15 @@ public class MainActivity extends AppCompatActivity {
 //    }
 
 
-    public void playMusic(View view){
+    public void playSound(View view){
         int ID = view.getId();
         String resource = view.getResources().getResourceEntryName(ID);
-        int identifier = view.getResources().getIdentifier(resource,"raw","com.example.abima.gridlayout");
+        int identifier = getResources().getIdentifier(resource,"raw","com.example.abima.gridlayout");
 
         mediaPlayer = MediaPlayer.create(this,identifier);
 
         mediaPlayer.setOnPreparedListener(new MediaPlayer.OnPreparedListener() {
-            // Close the progress bar and play the video
+
             public void onPrepared(MediaPlayer mp) {
                 if (mp != null)
                     mp.start();
